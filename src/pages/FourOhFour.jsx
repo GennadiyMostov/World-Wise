@@ -1,6 +1,9 @@
+import PageNav from '../components/PageNav';
+
 const FourOhFour = () => {
   return (
     <div>
+      <PageNav />
       <h1>
         <strong>Page Not Found</strong>
       </h1>
