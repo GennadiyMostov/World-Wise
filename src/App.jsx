@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import FourOhFour from './pages/FourOhFour/FourOhFour';
-import Product from './pages/Product/Product';
-import Pricing from './pages/Pricing/Pricing';
-import Homepage from './pages/Homepage/Homepage';
-import AppLayout from './pages/AppLayout/AppLayout';
-import Login from './pages/Login/Login';
 import CityList from './components/CityList/CityList';
 import CountryList from './components/CountryList/CountryList';
+import AppLayout from './pages/AppLayout/AppLayout';
+import FourOhFour from './pages/FourOhFour/FourOhFour';
+import Homepage from './pages/Homepage/Homepage';
+import Login from './pages/Login/Login';
+import Pricing from './pages/Pricing/Pricing';
+import Product from './pages/Product/Product';
 
 const BASE_URL = 'http://localhost:8000';
 
@@ -50,9 +50,7 @@ const App = () => {
           />
           <Route
             path='countries'
-            isLoading={isLoading}
-            cities={cities}
-            element={<CountryList />}
+            element={<CountryList isLoading={isLoading} cities={cities} />}
           />
           <Route path='form' element={<p>Form</p>} />
         </Route>
