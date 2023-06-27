@@ -1,9 +1,9 @@
-import styles from './CityList.module.css';
+import styles from './CountryList.module.css';
 import Spinner from '../Spinner/Spinner';
-import CityItem from '../CityItem/CityItem';
+
 import Message from '../Message/Message';
 
-const CityList = ({ cities, isLoading }) => {
+const CountryList = ({ cities, isLoading }) => {
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -12,7 +12,7 @@ const CityList = ({ cities, isLoading }) => {
     );
 
   return (
-    <ul className={styles.cityList}>
+    <ul className={styles.countryList}>
       {cities.map((city) => {
         return <CityItem city={city} key={city.id} />;
       })}
@@ -20,4 +20,4 @@ const CityList = ({ cities, isLoading }) => {
   );
 };
 
-export default CityList;
+export default CountryList;
