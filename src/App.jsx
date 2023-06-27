@@ -6,6 +6,7 @@ import Pricing from './pages/Pricing/Pricing';
 import Homepage from './pages/Homepage/Homepage';
 import AppLayout from './pages/AppLayout/AppLayout';
 import Login from './pages/Login/Login';
+import CityList from './components/CityList/CityList';
 
 const App = () => {
   return (
@@ -16,8 +17,8 @@ const App = () => {
         <Route path='pricing' element={<Pricing />} />
         <Route path='/login' element={<Login />} />
         <Route path='app' element={<AppLayout />}>
-          <Route index element={<p>LIST</p>} />
-          <Route path='cities' element={<p>List of cities Here</p>} />
+          <Route index element={<CityList />} />
+          <Route path='cities' element={<CityList />} />
           <Route path='countries' element={<p>List of Coutries Here</p>} />
           <Route path='form' element={<p>Form</p>} />
         </Route>
