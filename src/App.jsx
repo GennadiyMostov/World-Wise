@@ -9,6 +9,8 @@ import Homepage from './pages/Homepage/Homepage';
 import Login from './pages/Login/Login';
 import Pricing from './pages/Pricing/Pricing';
 import Product from './pages/Product/Product';
+import City from './components/City/City';
+import Form from './components/Form/Form';
 
 const BASE_URL = 'http://localhost:8000';
 
@@ -38,7 +40,7 @@ const App = () => {
         <Route index element={<Homepage />} />
         <Route path='product' element={<Product />} />
         <Route path='pricing' element={<Pricing />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='login' element={<Login />} />
         <Route path='app' element={<AppLayout />}>
           <Route
             index
@@ -48,11 +50,12 @@ const App = () => {
             path='cities'
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
+          <Route path='cities/:id' element={<City />} />
           <Route
             path='countries'
             element={<CountryList isLoading={isLoading} cities={cities} />}
           />
-          <Route path='form' element={<p>Form</p>} />
+          <Route path='form' element={<Form />} />
         </Route>
         <Route path='*' element={<FourOhFour />} />
       </Routes>
