@@ -3,7 +3,11 @@ import Spinner from '../Spinner/Spinner';
 import CityItem from '../CityItem/CityItem';
 import Message from '../Message/Message';
 
-const CityList = ({ cities, isLoading }) => {
+import CitiesDataConsumer from '../../context/CitiesContext';
+
+const CityList = () => {
+  const { cities, isLoading } = CitiesDataConsumer();
+
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
