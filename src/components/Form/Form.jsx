@@ -50,14 +50,6 @@ const reducer = (state, action) => {
 };
 
 function Form() {
-  // const [cityName, setCityName] = useState('');
-  // const [country, setCountry] = useState('');
-  // const [date, setDate] = useState(new Date());
-  // const [notes, setNotes] = useState('');
-  // const [isLoadingGeocode, setIsLoadingGeocode] = useState(false);
-  // const [emoji, setEmoji] = useState('');
-  // const [geocodingError, setGeocodingError] = useState('');
-
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
     cityName,
