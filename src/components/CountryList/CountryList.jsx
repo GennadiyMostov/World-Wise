@@ -4,10 +4,10 @@ import CountryItem from '../CountryItem/CountryItem';
 import Message from '../Message/Message';
 import Spinner from '../Spinner/Spinner';
 
-import { CitiesDataConsumer } from '../../context/CitiesContext';
+import { useCities } from '../../context/CitiesContext';
 
 const CountryList = () => {
-  const { cities, isLoading } = CitiesDataConsumer();
+  const { cities, isLoading } = useCities();
 
   if (isLoading) return <Spinner />;
 

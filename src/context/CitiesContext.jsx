@@ -53,11 +53,11 @@ const CitiesProvider = ({ children }) => {
   );
 };
 
-const CitiesDataConsumer = () => {
+const useCities = () => {
   const context = useContext(CitiesContext);
   if (context === undefined)
     throw new Error('CitiesContext was used outside the cities provider');
   return context;
 };
 
-export { CitiesProvider, CitiesDataConsumer };
+export { CitiesProvider, useCities };
