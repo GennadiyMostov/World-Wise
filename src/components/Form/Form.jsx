@@ -8,8 +8,10 @@ import Button from '../Button/Button';
 import BackButton from '../BackButton/BackButton';
 import Message from '../Message/Message';
 
+import { useCities } from '../../context/CitiesContext';
 import { useURLPosition } from '../../hooks/useURLPosition.js';
 import Spinner from '../Spinner/Spinner';
+import { useNavigate } from 'react-router-dom';
 
 function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -65,6 +67,8 @@ function Form() {
   } = state;
 
   const [lat, lon] = useURLPosition();
+  const { createCity, isLoading } = useCities();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!lat && !lon) return;
@@ -78,7 +82,6 @@ function Form() {
           `${BASE_URL}?latitude=${lat}&longitude=${lon}&key=bdc_7cf1f9de45ee44e7b300d27acd66ffb0`
         );
         const data = await res.json();
-        console.log(data);
         if (!data.countryCode)
           throw new Error(
             'Location is invalid, click on another position on the map.'
@@ -104,8 +107,10 @@ function Form() {
     fetchCityData();
   }, [lat, lon]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (!cityName || !date) return;
 
     const newCity = {
       cityName,
@@ -113,9 +118,14 @@ function Form() {
       emoji,
       date,
       notes,
+      position: {
+        lat,
+        lng: lon,
+      },
     };
 
-    console.log(event);
+    await createCity(newCity);
+    navigate('/app/cities');
   };
 
   if (!lat && !lon) return <Message message='Start by clicking the map!' />;
@@ -123,7 +133,9 @@ function Form() {
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${isLoading ? styles.loading : ''}`}
+      onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor='cityName'>City name</label>
         <input

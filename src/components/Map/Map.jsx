@@ -48,12 +48,12 @@ const Map = () => {
       )}
       <MapContainer
         center={mapPosition}
-        zoom={10}
+        zoom={14}
         scrollWheelZoom={true}
         className={styles.map}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
+          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
         {cities.map((city) => {
           return (
@@ -76,7 +76,8 @@ const Map = () => {
 
 const ChangeCenter = ({ position }) => {
   const map = useMap();
-  map.flyTo(position);
+  map.setZoom(14);
+  map.panTo(position);
   return null;
 };
 

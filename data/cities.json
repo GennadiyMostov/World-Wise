@@ -35,6 +35,66 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Lliria",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-07-11T17:38:40.490Z",
+      "notes": "654",
+      "position": {
+        "lat": "39.62613447330369",
+        "lng": "-0.5907675929117607"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Bunol",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-07-11T17:38:40.490Z",
+      "notes": "Notes",
+      "position": {
+        "lat": "39.41766655253336",
+        "lng": "-0.7861692048800606"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Marseille",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-07-11T17:41:17.594Z",
+      "notes": "Under Attack",
+      "position": {
+        "lat": "43.2966986576723",
+        "lng": "5.367164611816407"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Kyiv",
+      "country": "Ukraine",
+      "emoji": "🇺🇦",
+      "date": "2023-07-11T18:39:02.681Z",
+      "notes": "Home",
+      "position": {
+        "lat": "50.499452103967734",
+        "lng": "30.585937500000004"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Vilnius",
+      "country": "Lithuania",
+      "emoji": "🇱🇹",
+      "date": "2023-07-11T18:46:17.239Z",
+      "notes": "",
+      "position": {
+        "lat": "54.68653423452972",
+        "lng": "25.312500000000004"
+      },
+      "id": 98443202
     }
   ]
 }
