@@ -54,7 +54,21 @@ const CitiesProvider = ({ children }) => {
       setCities([...cities, data]);
       setCurrentCity(data);
     } catch {
-      alert('Error Fetching Data, Check Your Connect And Try Again');
+      alert('Error Creating City');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const deleteCity = async (id) => {
+    try {
+      setIsLoading(true);
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: 'DELETE',
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch {
+      alert('Error Deleting That City');
     } finally {
       setIsLoading(false);
     }
@@ -70,6 +84,7 @@ const CitiesProvider = ({ children }) => {
         currentCity,
         getCity,
         createCity,
+        deleteCity,
       }}>
       {children}
     </CitiesContext.Provider>

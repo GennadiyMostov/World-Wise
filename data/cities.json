@@ -1,42 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
       "cityName": "Lliria",
       "country": "Spain",
       "emoji": "🇪🇸",
@@ -47,30 +11,6 @@
         "lng": "-0.5907675929117607"
       },
       "id": 98443198
-    },
-    {
-      "cityName": "Bunol",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-11T17:38:40.490Z",
-      "notes": "Notes",
-      "position": {
-        "lat": "39.41766655253336",
-        "lng": "-0.7861692048800606"
-      },
-      "id": 98443199
-    },
-    {
-      "cityName": "Marseille",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2023-07-11T17:41:17.594Z",
-      "notes": "Under Attack",
-      "position": {
-        "lat": "43.2966986576723",
-        "lng": "5.367164611816407"
-      },
-      "id": 98443200
     },
     {
       "cityName": "Kyiv",
@@ -85,14 +25,14 @@
       "id": 98443201
     },
     {
-      "cityName": "Vilnius",
-      "country": "Lithuania",
-      "emoji": "🇱🇹",
-      "date": "2023-07-11T18:46:17.239Z",
+      "cityName": "Kiel",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2023-07-11T19:19:19.640Z",
       "notes": "",
       "position": {
-        "lat": "54.68653423452972",
-        "lng": "25.312500000000004"
+        "lat": "54.33574395530071",
+        "lng": "10.140380859375002"
       },
       "id": 98443202
     }
