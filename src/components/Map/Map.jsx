@@ -76,7 +76,7 @@ const Map = () => {
 
 const ChangeCenter = ({ position }) => {
   const map = useMap();
-  map.setView(position);
+  map.flyTo(position);
   return null;
 };
 
