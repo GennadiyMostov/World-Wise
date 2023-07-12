@@ -18,7 +18,9 @@ import { useURLPosition } from '../../hooks/useURLPosition.js';
 
 const Map = () => {
   const { cities } = useCities();
-  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [mapPosition, setMapPosition] = useState([
+    50.44990787536339, 30.523796081542972,
+  ]);
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
@@ -48,7 +50,7 @@ const Map = () => {
       )}
       <MapContainer
         center={mapPosition}
-        zoom={14}
+        zoom={10}
         scrollWheelZoom={true}
         className={styles.map}>
         <TileLayer
