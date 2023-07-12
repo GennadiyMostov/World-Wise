@@ -21,6 +21,8 @@ function convertToEmoji(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
+console.log(import.meta.env.VITE_BIG_DATA_CLOUD_API_KEY);
+
 const BASE_URL = 'https://api.bigdatacloud.net/data/reverse-geocode';
 
 const initialState = {
