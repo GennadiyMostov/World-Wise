@@ -21,8 +21,6 @@ function convertToEmoji(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
-console.log(import.meta.env.VITE_BIG_DATA_CLOUD_API_KEY);
-
 const BASE_URL = 'https://api.bigdatacloud.net/data/reverse-geocode';
 
 const initialState = {
@@ -81,8 +79,11 @@ function Form() {
         await dispatch({ type: 'setGeocodingError', payload: '' });
 
         const res = await fetch(
-          `${BASE_URL}?latitude=${lat}&longitude=${lon}&key=bdc_7cf1f9de45ee44e7b300d27acd66ffb0`
+          `${BASE_URL}?latitude=${lat}&longitude=${lon}&key=${
+            import.meta.env.VITE_BIG_DATA_CLOUD_API_KEY
+          }`
         );
+
         const data = await res.json();
         if (!data.countryCode)
           throw new Error(
