@@ -24,16 +24,16 @@ CHALLENGE
 
 const App = () => {
   return (
-    <CitiesProvider>
-      <BrowserRouter>
-        <AuthProvider>
+    <AuthProvider>
+      <CitiesProvider>
+        <BrowserRouter>
           <Routes>
             <Route index element={<Homepage />} />
             <Route path='product' element={<Product />} />
             <Route path='pricing' element={<Pricing />} />
             <Route path='login' element={<Login />} />
             <Route path='app' element={<AppLayout />}>
-              <Route index element={<Navigate to='cities' replace />} />
+              <Route index element={<Navigate replace to='cities' />} />
               <Route path='cities' element={<CityList />} />
               <Route path='cities/:id' element={<City />} />
               <Route path='countries' element={<CountryList />} />
@@ -41,9 +41,9 @@ const App = () => {
             </Route>
             <Route path='*' element={<FourOhFour />} />
           </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-    </CitiesProvider>
+        </BrowserRouter>
+      </CitiesProvider>
+    </AuthProvider>
   );
 };
 

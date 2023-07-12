@@ -3,28 +3,38 @@ import { useState, useEffect } from 'react';
 import styles from './Login.module.css';
 
 import PageNav from '../../components/PageNav/PageNav';
+import Button from '../../components/Button/Button';
+
 import { useAuth } from '../../context/FakeAuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   // PRE-FILL FOR DEV PURPOSES
-  const [email, setEmail] = useState('jack@example.com');
+  const [email, setEmail] = useState('gmostov@example.com');
   const [password, setPassword] = useState('qwerty');
 
   const { isAuthenticated, login } = useAuth();
 
   const navigate = useNavigate();
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (email && password) {
+      login(email, password);
+    }
+  };
+
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/app');
+      navigate('/app', { replace: true });
     }
-  });
+  }, [isAuthenticated, navigate]);
 
   return (
     <main className={styles.login}>
       <PageNav />
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.row}>
           <label htmlFor='email'>Email address</label>
           <input
@@ -46,13 +56,7 @@ const Login = () => {
         </div>
 
         <div>
-          <button
-            onClick={(event) => {
-              event.preventDefault();
-              login(email, password);
-            }}>
-            Login
-          </button>
+          <Button type='primary'>Login</Button>
         </div>
       </form>
     </main>
