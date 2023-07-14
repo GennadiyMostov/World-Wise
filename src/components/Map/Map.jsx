@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -6,15 +6,15 @@ import {
   Popup,
   useMap,
   useMapEvents,
-} from 'react-leaflet';
+} from "react-leaflet";
 
-import styles from './Map.module.css';
+import styles from "./Map.module.css";
 
-import { useState, useEffect } from 'react';
-import { useCities } from '../../context/CitiesContext';
-import { useGeolocation } from '../../hooks/useGeolocation';
-import Button from '../Button/Button';
-import { useURLPosition } from '../../hooks/useURLPosition.js';
+import { useState, useEffect } from "react";
+import { useCities } from "../../context/CitiesContext";
+import { useGeolocation } from "../../hooks/useGeolocation";
+import Button from "../Button/Button";
+import { useURLPosition } from "../../hooks/useURLPosition.js";
 
 const Map = () => {
   const { cities } = useCities();
@@ -45,14 +45,15 @@ const Map = () => {
     <div className={styles.mapContainer}>
       {!geoLocationPosition && (
         <Button type='position' onClick={getCoordinates}>
-          {isLoadingPosition ? 'Loading' : 'Use Your Position'}
+          {isLoadingPosition ? "Loading" : "Use Your Position"}
         </Button>
       )}
       <MapContainer
         center={mapPosition}
         zoom={10}
         scrollWheelZoom={true}
-        className={styles.map}>
+        className={styles.map}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -61,7 +62,8 @@ const Map = () => {
           return (
             <Marker
               position={[city.position.lat, city.position.lng]}
-              key={city.id}>
+              key={city.id}
+            >
               <Popup>
                 <span>{city.emoji}</span>
                 <span>{city.cityName}</span>
@@ -87,7 +89,6 @@ const DetectClick = () => {
   const navigate = useNavigate();
   useMapEvents({
     click: (event) => {
-      console.log(event);
       navigate(`form?lat=${event.latlng.lat}&lon=${event.latlng.lng}`);
     },
   });
